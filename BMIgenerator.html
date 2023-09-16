@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container{
+            margin-left: 100px;
+            border: 2px solid;
+            margin-top: 70px;
+            width: 70%;
+            padding-top: 30px;
+            height: 80%;
+        
+        }
+        h2{
+            padding-left: 35%;
+        }
+        .heading{
+            
+            border: 5px solid;
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+        #height{
+            padding-left: 20%;
+        }
+        #weight{
+            padding-left: 20%;
+        }
+        
+        #cal{
+            height: 20px;
+            width: 70px;
+        
+        }
+        h4{
+            align-items: center;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="heading"><h2> BMI CALCULATOR</h2></div>
+    <div class= "container">
+        <label for="height">HEIGHT IN CM: </label>
+          <input type="textbox" placeholder="height" id="height"></br></br></br></br></br>
+        <label for="weight">WEIGHT IN KG: </label>
+          <input type="textbox" id="weight" placeholder="weight"> </br></br></br></br></br>
+        <div class="center">
+        <button id="cal" onclick="CalculateBMI()">calculate</button></div>
+        <h3><b>BMI WEIGHT GUIDE</b></h3>
+        <h4>Under Weight = less than 18.6</br>
+            Normal Range = 18.6 and 24.9</br>
+            Overweight = Greater than 24.9</br>
+        </h4>
+        
+        
+
+    </div>
+    <p id="answer"></p>
+    <script>
+        function CalculateBMI(){
+            let w = parseInt(document.querySelector("#weight").value);
+            let h = parseInt(document.querySelector("#height").value);
+           // let result = document.querySelector("#answer");
+            if(h==" " || isNaN(h)){
+                alert("Please provide a valid height");
+            }
+            else if(w==" " || isNaN(w)){
+                alert("Please provide a valid height");
+            }
+            else{
+                let result =  (w/((h*h)/1000)).toFixed(2);
+                if(result<18.6){
+                    document.getElementById("answer").innerHTML = "Under Weight";
+
+                }
+                else if(result>=18.6||result<=24.9){
+                    document.getElementById("answer").innerHTML = "Normal Range";
+                }
+                else{
+                    document.getElementById("answer").innerHTML="overweight";
+                }
+            }
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .center{
+            border: 5px solid;
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+        #red{
+            background-color: red;
+            height: 150px;
+            width: 150px;
+            border-radius: 2px;
+            border: 5px;
+            border-color: black;
+            border-style: solid;
+        }
+        #green
+        {background-color: green;
+            height: 150px;
+            width: 150px;
+            border-radius: 2px;
+            border: 5px;
+            border-color: black;
+            border-style: solid;
+        }
+        #yellow{
+            background-color: yellow;
+            height: 150px;
+            width: 150px;
+            border-radius: 2px;
+            border: 5px;
+            border-color: black;
+            border-style: solid;
+            
+            
+        }
+        #grey{
+            background-color: grey;
+            height: 150px;
+            width: 150px;
+            border-radius: 2px;
+            border: 5px;
+            border-color: black;
+            border-style: solid;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="center">
+
+    <div>
+        <h1> Color scheme switcher</h1></div>
+    <div>
+     <button  id="red">click me</button>
+     <button  id="grey">click me</button>
+     <button id="green">click me</button>
+     <button id="yellow">click me</button>
+   
+    </div>
+    <h2> Try clicking on the above colors to change the background color of this page!!!!</h2>
+</div>
+<script>
+    document.getElementById("red").onclick = function(){
+        document.body.style.backgroundColor='red';
+    }
+    document.getElementById("grey").onclick = function(){
+        document.body.style.backgroundColor='grey';
+    }
+    document.getElementById("green").onclick = function(){
+        document.body.style.backgroundColor='green';
+    }
+    document.getElementById("yellow").onclick = function(){
+        document.body.style.backgroundColor='yellow';
+    }
+</script>
+</body>
+</html>
