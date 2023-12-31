@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            height: 100%;
+            width: 100%;
+            background-color: aqua;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            height: 1000px;
+            width: 1800px;
+            background-color: plum;
+            
+
+        }
+        .input{
+            margin: 15px;
+            height: 240px;
+            width: 900px;
+            background-color: rgb(176, 176, 233);
+            border-radius: 50px;
+            margin-left: 250px;
+        }
+        .output{
+            margin: 15px;
+            height: 500px;
+            width: 900px;
+            background-color: black;
+            color: white;
+            border-radius: 50px;
+            margin-left: 250px;
+        }
+        #show{
+            border: none;
+            font-size: 2rem;
+        }
+        .input{
+           
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .output{
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        @keyframes change {
+       0%{
+        color: blue;
+       }
+       50%{
+       color: red;
+       }
+       100%{
+        color: yellow;
+       }
+     
+    }
+    @keyframes rotate {
+       0%{
+        transform: rotate(0deg);
+       }
+       50%{
+      transform: rotate(180deg);
+       }
+       100%{
+       transform: rotate(360deg);
+       }
+     
+    }
+    @keyframes blink {
+       0%, 100%{
+       opacity: 0;
+       }
+       50%{
+      opacity: 1;
+       }
+    }
+    @keyframes pulse {
+       0%{
+        
+        text-shadow: 0 0 5px rgba(225, 225, 225, 0.5);
+       }
+       50%{
+        text-shadow: 0 0 10px rgba(225, 225, 225, 1);
+       }
+       100%{
+        text-shadow: 0 0 5px rgba(225, 225, 225, 0.5);
+       }
+     
+    }
+    @keyframes neonGlow {
+       0%{
+        background-color: black;
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+       }
+       50%{
+        background-color: black;
+        text-shadow: 0 0 105px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+       }
+       100%{
+        background-color: black;
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+       }
+     
+    }
+
+    @keyframes float {
+       0%{
+        background-color: black;
+        text-shadow: 0 0 5px #00bfff, 0 0 10px #00bfff, 0 0 15px #00bfff;
+        transform: translateY(0);
+       }
+       50%{
+        background-color: black;
+        text-shadow: 0 0 105px #ff6ec7, 0 0 20px #ff6ec7, 0 0 30px #ff6ec7;
+        transform: translateY(-20px);
+       }
+       100%{
+        background-color: black;
+        text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 15px #ff00ff;
+        transform: translateY(0);
+       }
+     
+    }
+
+
+
+    @keyframes bounce {
+       0% ,100%{
+        transform: translateY(0);
+       }
+       50%{
+        transform: translateY(-50px);
+       }
+      
+     
+    }
+
+    @keyframes rainbow {
+        0%{ color: #ff5733;
+           
+        }
+           10%{
+            color: #ffa500;
+           }
+        15%{
+            color: #ffd700;
+        }
+        25%{
+            color: #66ff66;
+        }
+        50%{
+            color: #66b2ff;
+        }
+        75%{
+            color: #bf40bf;
+        }
+        100%{
+            color:#ff66b2;
+        }
+        
+    }
+    @keyframes typing {
+       from{
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid #3498db;
+
+        width: 0;
+       }
+       to{
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid #3498db;
+        
+       border-right: 2px solid transparent;
+       width: 100%;
+       }
+      
+     
+    }
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="input">
+            <div class="pure">
+            <input type="text" id="name" placeholder="enter your name">
+            </div>
+            <div class="btn">
+             <button onclick="fun()">color change</button>
+             <button onclick="rotate()">Rotate</button>
+              <button onclick="blink()">Blink</button>
+              <button onclick="pulse()">Pulse</button>
+              <button onclick="neonGlow()">neonGlow</button>
+              <button onclick="bounce()">Bounce</button>
+              <button onclick="float()">float</button>
+              <button onclick="rainbow()">rainbow</button>
+              <button onclick="typing()">typing</button>
+            </div>
+
+             
+        </div>
+        <div class="output">
+           <p id="show">
+
+           </p>
+
+        </div>
+    </div>
+    <script>
+        let text;
+ function fun(){  
+    text = document.getElementById("name").value;
+
+    document.getElementById("show").innerHTML=text;
+    
+    document.getElementById("show").style.animation = "change 4s infinite";
+
+ }
+
+ function rotate(){  
+    text = document.getElementById("name").value;
+
+    document.getElementById("show").innerHTML=text;
+    
+    document.getElementById("show").style.animation = "rotate 4s infinite";
+
+ }
+ function blink(){  
+    text = document.getElementById("name").value;
+
+    document.getElementById("show").innerHTML=text;
+    
+    document.getElementById("show").style.animation = "blink 4s infinite";
+
+ }
+ function pulse(){  
+    text = document.getElementById("name").value;
+
+    document.getElementById("show").innerHTML=text;
+    
+    document.getElementById("show").style.animation = "pulse 4s infinite";
+
+ }
+ function neonGlow(){  
+    text = document.getElementById("name").value;
+
+    document.getElementById("show").innerHTML=text;
+    
+    document.getElementById("show").style.animation = "neonGlow 4s infinite";
+
+ }
+
+ function bounce(){  
+    text = document.getElementById("name").value;
+
+    document.getElementById("show").innerHTML=text;
+    
+    document.getElementById("show").style.animation = "bounce 4s infinite";
+
+ }
+ function float(){  
+    text = document.getElementById("name").value;
+
+    document.getElementById("show").innerHTML=text;
+    
+    document.getElementById("show").style.animation = "float 4s infinite";
+
+ }
+ function rainbow(){  
+    text = document.getElementById("name").value;
+
+    document.getElementById("show").innerHTML=text;
+    
+    document.getElementById("show").style.animation = "rainbow 4s linear infinite";
+
+ }
+ function typing(){  
+    text = document.getElementById("name").value;
+
+    document.getElementById("show").innerHTML=text;
+    
+    document.getElementById("show").style.animation = "typing 4s steps(40) infinite";
+
+ }
+ 
+    </script>
+</body>
+</html>
